@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: fullstack-agents-nextjs
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - .env
+    restart: unless-stopped
